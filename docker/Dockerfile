@@ -17,7 +17,7 @@ RUN echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | tee /etc/ap
     apt-get install sbt=1.4.0
 
 # Clone and pre-build Reach so that the server starts up fast upon launch
-RUN git clone https://github.com/clulab/reach.git && \
+RUN git clone https://github.com/mjamei/reach.git && \
     cd reach && \
     sed -i 's/host = localhost/host = 0.0.0.0/' export/src/main/resources/reference.conf && \
     sbt publishLocal
