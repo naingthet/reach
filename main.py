@@ -6,7 +6,7 @@ papers_dir = Path("./papers")
 client = bigquery.Client()
 
 table_id = "prod_indra.reach_abstracts_to_read"
-LIMIT = os.environ.get("LIMIT", 1000)
+LIMIT = int(os.environ.get("LIMIT", 1000))
 
 
 def load_abstracts_to_files(limit):
