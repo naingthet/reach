@@ -4,7 +4,7 @@ import os
 from pprint import pprint
 import json
 
-UPLOAD_BATCH_SIZE = os.environ.get("UPLOAD_BATCH_SIZE", 100)
+UPLOAD_BATCH_SIZE = int(os.environ.get("UPLOAD_BATCH_SIZE", 100))
 output_dir = Path("./output")
 client = bigquery.Client()
 
