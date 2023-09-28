@@ -3,6 +3,8 @@ from pathlib import Path
 import os
 
 papers_dir = Path("./papers")
+if not papers_dir.exists():
+    papers_dir.mkdir()
 client = bigquery.Client()
 
 table_id = "prod_indra.reach_abstracts_to_read"
